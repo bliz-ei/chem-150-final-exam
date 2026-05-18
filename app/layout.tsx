@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { PomodoroTimer } from '@/components/PomodoroTimer';
 import { Countdown } from '@/components/Countdown';
 import { FullscreenToggle } from '@/components/FullscreenToggle';
+import { SmoothScroll } from '@/components/SmoothScroll';
 
 export const metadata: Metadata = {
   title: 'Chem 150 Study Hub',
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="max-w-5xl mx-auto px-4 py-8 pb-32">{children}</main>
         <PomodoroTimer />
         <FullscreenToggle />
+        <SmoothScroll />
       </body>
     </html>
   );
