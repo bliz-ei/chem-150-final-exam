@@ -20,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="flex items-center gap-4 text-sm text-zinc-400">
               <Link href="/" className="hover:text-zinc-100">Dashboard</Link>
+              <Link href="/guide/" className="hover:text-zinc-100">Guide</Link>
               <Link href="/cards/" className="hover:text-zinc-100">Cards</Link>
               <Link href="/practice/" className="hover:text-zinc-100">Practice</Link>
               <span className="hidden sm:inline text-zinc-700">|</span>
