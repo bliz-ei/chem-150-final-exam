@@ -8,6 +8,7 @@ import { loadReview, saveReview } from '@/lib/storage';
 import { applyRating, isDue } from '@/lib/leitner';
 import { filterByQuery, pickWeighted, shuffled } from '@/lib/weighting';
 import { FlashcardView } from '@/components/Flashcard';
+import { Fmt } from '@/lib/chemFmt';
 import type { Flashcard, Rating, ReviewState, UnitId } from '@/lib/types';
 
 const Inner = () => {
@@ -122,7 +123,7 @@ const Inner = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between text-xs text-zinc-500">
-        <span>{filterLabel}</span>
+        <span><Fmt>{filterLabel ?? ''}</Fmt></span>
         <span>Reviewed this session: <span className="font-mono text-zinc-300">{reviewedThisSession}</span></span>
       </div>
       <FlashcardView

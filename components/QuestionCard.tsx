@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Question } from '@/lib/types';
+import { Fmt } from '@/lib/chemFmt';
 
 type Props = {
   question: Question;
@@ -11,12 +12,25 @@ type Props = {
   onNext: () => void;
 };
 
+const SUPER_TO_ASCII: Record<string, string> = {
+  '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4',
+  '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9',
+  '⁻': '-', '⁺': '+',
+};
+const SUB_TO_ASCII: Record<string, string> = {
+  '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4',
+  '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9',
+};
+
 const normalize = (s: string): string =>
   s
     .trim()
     .toLowerCase()
+    .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺]/g, (c) => SUPER_TO_ASCII[c] ?? c)
+    .replace(/[₀₁₂₃₄₅₆₇₈₉]/g, (c) => SUB_TO_ASCII[c] ?? c)
     .replace(/\s+/g, ' ')
-    .replace(/[°·×]/g, '')
+    .replace(/[°·×\^_*]/g, '')
+    .replace(/[{}]/g, '')
     .replace(/[−–]/g, '-');
 
 const checkShort = (input: string, answer: string): boolean => {
@@ -85,12 +99,12 @@ export const QuestionCardView = ({ question, topicName, unitId, onAnswered, onNe
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div className="flex items-center justify-between text-xs text-zinc-500 mb-2">
-        <span>Unit {unitId} · {topicName}</span>
+        <span>Unit {unitId} · <Fmt>{topicName}</Fmt></span>
         <span className="uppercase tracking-wider">{question.kind === 'mcq' ? 'Multiple choice' : 'Short answer'}</span>
       </div>
       <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
         <div className="text-zinc-100 text-lg leading-relaxed whitespace-pre-wrap mb-5">
-          {question.prompt}
+          <Fmt>{question.prompt}</Fmt>
         </div>
         {question.kind === 'mcq' && question.choices && (
           <div className="space-y-2">
@@ -113,7 +127,7 @@ export const QuestionCardView = ({ question, topicName, unitId, onAnswered, onNe
                           : 'border-zinc-800 bg-zinc-950 text-zinc-200 hover:bg-zinc-900'
                   }`}
                 >
-                  {choice}
+                  <Fmt>{choice}</Fmt>
                 </button>
               );
             })}
@@ -136,10 +150,10 @@ export const QuestionCardView = ({ question, topicName, unitId, onAnswered, onNe
             </div>
             {!correct && (
               <div className="text-zinc-400 mt-1">
-                Answer: <span className="text-zinc-200">{question.answer}</span>
+                Answer: <span className="text-zinc-200"><Fmt>{question.answer}</Fmt></span>
               </div>
             )}
-            <div className="text-zinc-300 mt-2 whitespace-pre-wrap">{question.explanation}</div>
+            <div className="text-zinc-300 mt-2 whitespace-pre-wrap"><Fmt>{question.explanation}</Fmt></div>
           </div>
         )}
       </div>

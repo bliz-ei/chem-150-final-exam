@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Flashcard as FlashcardType, Rating } from '@/lib/types';
+import { Fmt } from '@/lib/chemFmt';
 
 type Props = {
   card: FlashcardType;
@@ -43,7 +44,7 @@ export const FlashcardView = ({ card, topicName, unitId, onRate, onSkip }: Props
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div className="flex items-center justify-between text-xs text-zinc-500 mb-2">
-        <span>Unit {unitId} · {topicName}</span>
+        <span>Unit {unitId} · <Fmt>{topicName}</Fmt></span>
         <span>{flipped ? 'Answer' : 'Question'}</span>
       </div>
       <button
@@ -52,7 +53,7 @@ export const FlashcardView = ({ card, topicName, unitId, onRate, onSkip }: Props
         aria-label="Flip card"
       >
         <div className="text-zinc-100 text-lg leading-relaxed whitespace-pre-wrap">
-          {flipped ? card.back : card.front}
+          <Fmt>{flipped ? card.back : card.front}</Fmt>
         </div>
       </button>
       <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
