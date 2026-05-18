@@ -2,40 +2,50 @@
 
 import { useEffect } from 'react';
 
-type LocomotiveInstance = {
-  destroy?: () => void;
+type LenisInstance = {
+  raf: (time: number) => void;
+  destroy: () => void;
 };
+
+type LenisCtor = new (opts?: Record<string, unknown>) => LenisInstance;
 
 export const SmoothScroll = () => {
   useEffect(() => {
-    // Respect the user's OS-level "reduce motion" preference: skip smooth scroll entirely.
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
-    }
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    let instance: LocomotiveInstance | null = null;
-    let cancelled = false;
+    let lenis: LenisInstance | null = null;
+    let rafId = 0;
+    let aborted = false;
 
-    (async () => {
-      try {
-        const mod = await import('locomotive-scroll');
-        if (cancelled) return;
-        const LocomotiveScroll = mod.default;
-        // Locomotive v5 wraps Lenis. With no args it smooths the document scroll.
-        instance = new LocomotiveScroll({
-          lenisOptions: {
-            lerp: 0.1, // 0 = no smoothing, 1 = no inertia. 0.1 is the comfortable default.
-          },
-        }) as unknown as LocomotiveInstance;
-      } catch {
-        // If locomotive-scroll fails to load (network, build), fall back to native scroll.
-      }
-    })();
+    import('lenis')
+      .then((mod) => {
+        if (aborted) return;
+        const Lenis = mod.default as unknown as LenisCtor;
+        lenis = new Lenis({
+          // Lower lerp = more smoothing/inertia. 0.1 is the published default;
+          // 0.08 gives it a slightly more noticeable glide.
+          lerp: 0.08,
+          smoothWheel: true,
+          wheelMultiplier: 1,
+        });
+
+        const tick = (time: number) => {
+          lenis?.raf(time);
+          rafId = requestAnimationFrame(tick);
+        };
+        rafId = requestAnimationFrame(tick);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error('[SmoothScroll] failed to load lenis:', err);
+      });
 
     return () => {
-      cancelled = true;
+      aborted = true;
+      if (rafId) cancelAnimationFrame(rafId);
       try {
-        instance?.destroy?.();
+        lenis?.destroy?.();
       } catch {
         // ignore
       }

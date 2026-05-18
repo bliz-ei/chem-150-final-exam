@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+import 'lenis/dist/lenis.css';
 import { PomodoroTimer } from '@/components/PomodoroTimer';
 import { Countdown } from '@/components/Countdown';
 import { FullscreenToggle } from '@/components/FullscreenToggle';
