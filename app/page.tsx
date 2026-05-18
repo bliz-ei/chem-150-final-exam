@@ -55,6 +55,12 @@ export default function Dashboard() {
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           <Link
+            href="/guide/"
+            className="px-4 py-2 rounded border border-emerald-500/60 bg-emerald-950/40 hover:bg-emerald-950/60 text-emerald-100 text-sm font-medium"
+          >
+            Read the study guide first →
+          </Link>
+          <Link
             href="/cards/"
             className="px-4 py-2 rounded border border-zinc-400 bg-zinc-800 hover:bg-zinc-700 text-zinc-100 text-sm font-medium"
           >
