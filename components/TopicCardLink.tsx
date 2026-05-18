@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Topic } from '@/lib/types';
+import { Fmt } from '@/lib/chemFmt';
 
 type Props = {
   topic: Topic;
@@ -16,8 +17,8 @@ export const TopicCardLink = ({ topic, dueCount, totalCards, totalQuestions }: P
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="text-sm font-medium text-zinc-100">{topic.name}</div>
-          <div className="text-xs text-zinc-500 mt-0.5 line-clamp-2">{topic.description}</div>
+          <div className="text-sm font-medium text-zinc-100"><Fmt>{topic.name}</Fmt></div>
+          <div className="text-xs text-zinc-500 mt-0.5 line-clamp-2"><Fmt>{topic.description}</Fmt></div>
         </div>
         <div className="shrink-0 text-right">
           <div className="text-xs text-zinc-400">

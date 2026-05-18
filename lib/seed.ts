@@ -48,13 +48,13 @@ export const TOPICS: Topic[] = [
   { id: 'u3-half-life', unitId: 3, name: 'Half-life',
     description: '0th: t½ = [A]₀/(2k). 1st: t½ = 0.693/k (concentration-independent). 2nd: t½ = 1/(k·[A]₀).' },
   { id: 'u3-coord-diagram', unitId: 3, name: 'Reaction coordinate diagrams',
-    description: 'Identify reactants, products, TS, intermediate. Ea_fwd = TS − reactant; Ea_rev = TS − product; ΔH = product − reactant.' },
+    description: 'Identify reactants, products, TS, intermediate. E_{a,fwd} = TS − reactant; E_{a,rev} = TS − product; ΔH = product − reactant.' },
   { id: 'u3-mechanisms', unitId: 3, name: 'Mechanisms & RDS',
     description: 'Intermediate appears then disappears; catalyst opposite. Rate law follows the rate-determining step.' },
   { id: 'u3-arrhenius', unitId: 3, name: 'Arrhenius equation',
-    description: 'k = A·e^(−Ea/RT). ln k = ln A − Ea/RT. Higher T or lower Ea → larger k.' },
-  { id: 'u3-K-expr', unitId: 3, name: 'K expressions (Kc, Kp)',
-    description: 'K = [products]^ν / [reactants]^ν. Pure solids/liquids excluded. Kp = Kc·(RT)^Δn.' },
+    description: 'k = A·e^(−E_a/RT). ln k = ln A − E_a/RT. Higher T or lower E_a → larger k.' },
+  { id: 'u3-K-expr', unitId: 3, name: 'K expressions (K_c, K_p)',
+    description: 'K = [products]^ν / [reactants]^ν. Pure solids/liquids excluded. K_p = K_c·(RT)^Δn.' },
   { id: 'u3-Q-vs-K', unitId: 3, name: 'Q vs K direction of shift',
     description: 'Q < K → forward shift. Q > K → reverse shift. Q = K → equilibrium.' },
 
@@ -64,29 +64,29 @@ export const TOPICS: Topic[] = [
   { id: 'u4-G-K', unitId: 4, name: 'ΔG° and K relationship',
     description: 'ΔG° = −RT ln K. ΔG° < 0 → K > 1. ΔG° > 0 → K < 1. ΔG° = 0 → K = 1.' },
   { id: 'u4-conjugate-pairs', unitId: 4, name: 'Conjugate acid-base pairs',
-    description: 'Pair differs by one H⁺. Strong acid → very weak conjugate base (and vice versa). Ka·Kb = Kw for a conjugate pair.' },
-  { id: 'u4-pH-pOH-Kw', unitId: 4, name: 'pH, pOH, Kw interconversion',
-    description: 'pH = −log[H₃O⁺]. pH + pOH = 14 at 25 °C. Kw = [H₃O⁺][OH⁻] = 1.0×10⁻¹⁴ at 25 °C.' },
+    description: 'Pair differs by one H⁺. Strong acid → very weak conjugate base (and vice versa). K_a·K_b = K_w for a conjugate pair.' },
+  { id: 'u4-pH-pOH-Kw', unitId: 4, name: 'pH, pOH, K_w interconversion',
+    description: 'pH = −log[H₃O⁺]. pH + pOH = 14 at 25 °C. K_w = [H₃O⁺][OH⁻] = 1.0×10⁻¹⁴ at 25 °C.' },
   { id: 'u4-acid-strength-rank', unitId: 4, name: 'Ranking acid/base strength',
-    description: 'Larger Ka or smaller pKa = stronger acid. Stronger acid → weaker conjugate base. For binary acids: H-X bond strength dominates down a group, electronegativity across a period.' },
+    description: 'Larger K_a or smaller pK_a = stronger acid. Stronger acid → weaker conjugate base. For binary acids: H-X bond strength dominates down a group, electronegativity across a period.' },
   { id: 'u4-strong-pH', unitId: 4, name: 'Strong acid/base pH',
     description: 'Strong acid: [H₃O⁺] = C_acid (1:1). Strong base: [OH⁻] = C_base · (#OH). Ignore water unless C ≤ 10⁻⁶ M.' },
   { id: 'u4-weak-pH', unitId: 4, name: 'Weak acid/base pH (ICE)',
-    description: 'Set up ICE with x = [H₃O⁺] or [OH⁻]. Ka = x²/(C−x) ≈ x²/C if 5% rule holds. % ionization = x/C·100%.' },
-  { id: 'u4-Ka-Kb-from-pH', unitId: 4, name: 'Ka or Kb from initial C and pH',
-    description: 'From pH compute x = [H₃O⁺]; Ka = x²/(C−x). Or from % ionization: x = (%/100)·C, Ka = x²/(C−x).' },
+    description: 'Set up ICE with x = [H₃O⁺] or [OH⁻]. K_a = x²/(C−x) ≈ x²/C if 5% rule holds. % ionization = x/C·100%.' },
+  { id: 'u4-Ka-Kb-from-pH', unitId: 4, name: 'K_a or K_b from initial C and pH',
+    description: 'From pH compute x = [H₃O⁺]; K_a = x²/(C−x). Or from % ionization: x = (%/100)·C, K_a = x²/(C−x).' },
   { id: 'u4-salt-pH', unitId: 4, name: 'Salt solutions: acidic, basic, neutral',
-    description: 'Cation from strong base (Na⁺, K⁺): neutral. Cation from weak base (NH₄⁺): acidic. Anion from strong acid (Cl⁻, NO₃⁻): neutral. Anion from weak acid (F⁻, CH₃COO⁻): basic. Both weak: compare Ka vs Kb.' },
-  { id: 'u4-bronsted-K', unitId: 4, name: 'K for Brønsted reaction from two Ka',
-    description: 'For HA + B⁻ ⇌ A⁻ + HB: K = Ka(HA)/Ka(HB). Equilibrium favors the side with the weaker acid (smaller Ka).' },
+    description: 'Cation from strong base (Na⁺, K⁺): neutral. Cation from weak base (NH₄⁺): acidic. Anion from strong acid (Cl⁻, NO₃⁻): neutral. Anion from weak acid (F⁻, CH₃COO⁻): basic. Both weak: compare K_a vs K_b.' },
+  { id: 'u4-bronsted-K', unitId: 4, name: 'K for Brønsted reaction from two K_a',
+    description: 'For HA + B⁻ ⇌ A⁻ + HB: K = K_a(HA)/K_a(HB). Equilibrium favors the side with the weaker acid (smaller K_a).' },
   { id: 'u4-buffer-composition', unitId: 4, name: 'Buffer composition',
     description: 'Weak acid + its conjugate base, OR weak base + its conjugate acid, in comparable amounts (within ~10×).' },
   { id: 'u4-henderson', unitId: 4, name: 'Henderson-Hasselbalch',
-    description: 'pH = pKa + log([A⁻]/[HA]). Use moles or concentrations (same volume cancels).' },
+    description: 'pH = pK_a + log([A⁻]/[HA]). Use moles or concentrations (same volume cancels).' },
   { id: 'u4-buffer-after-addition', unitId: 4, name: 'Buffer pH after adding strong acid/base',
     description: 'Stoichiometric step first: strong acid consumes A⁻ (forms HA); strong base consumes HA (forms A⁻). Then apply H-H with new moles.' },
   { id: 'u4-buffer-capacity', unitId: 4, name: 'Buffer capacity & selection',
-    description: 'Capacity scales with absolute moles of buffer components. Best pair: pKa within ±1 of target pH (e.g., H₂PO₄⁻/HPO₄²⁻ for pH 7.4, pKa₂ ≈ 7.2).' },
+    description: 'Capacity scales with absolute moles of buffer components. Best pair: pK_a within ±1 of target pH (e.g., H₂PO₄⁻/HPO₄²⁻ for pH 7.4, pK_a₂ ≈ 7.2).' },
 ];
 
 const u4Topics = TOPICS.filter((t) => t.unitId === 4).map((t) => t.id);
@@ -215,10 +215,10 @@ c('u3-half-life', 5, 'If a reaction\'s t½ doubles each half-life, what order?',
 
 c('u3-coord-diagram', 1, 'Transition state on a coordinate diagram', 'Highest energy point on the reaction path between reactants and products (one TS per elementary step).');
 c('u3-coord-diagram', 2, 'Intermediate vs transition state', 'Intermediate sits at a local MINIMUM (valley) between two TS; TS is a maximum (peak).');
-c('u3-coord-diagram', 3, 'Ea (forward) =', 'Energy of TS − Energy of reactants.');
-c('u3-coord-diagram', 4, 'Ea (reverse) =', 'Energy of TS − Energy of products.');
+c('u3-coord-diagram', 3, 'E_a (forward) =', 'Energy of TS − Energy of reactants.');
+c('u3-coord-diagram', 4, 'E_a (reverse) =', 'Energy of TS − Energy of products.');
 c('u3-coord-diagram', 5, 'ΔH from coordinate diagram', 'Energy of products − Energy of reactants. Negative ΔH = exothermic.');
-c('u3-coord-diagram', 6, 'Catalyst effect on diagram', 'Lowers Ea_fwd AND Ea_rev (same TS energy lowered); ΔH unchanged.');
+c('u3-coord-diagram', 6, 'Catalyst effect on diagram', 'Lowers E_{a,fwd} AND E_{a,rev} (same TS energy lowered); ΔH unchanged.');
 
 c('u3-mechanisms', 1, 'Which step controls the overall rate law?', 'The rate-determining (slowest) step.');
 c('u3-mechanisms', 2, 'Intermediate vs catalyst — how to tell apart', 'Intermediate: produced then consumed (appears in middle). Catalyst: consumed then regenerated (appears at start and end).');
@@ -226,16 +226,16 @@ c('u3-mechanisms', 3, 'Should rate law contain an intermediate concentration?', 
 c('u3-mechanisms', 4, 'Mechanism: Step 1 (fast eq) A + B ⇌ C; Step 2 (slow) C + D → P. Rate law?', 'Slow step gives r = k₂[C][D]; sub [C] = (k₁/k₋₁)[A][B] → r = k_obs·[A][B][D].');
 c('u3-mechanisms', 5, 'Sum of elementary steps must equal…', 'The overall balanced equation (after canceling intermediates).');
 
-c('u3-arrhenius', 1, 'Arrhenius equation', 'k = A·exp(−Ea/RT).');
-c('u3-arrhenius', 2, 'Linear form of Arrhenius', 'ln k = ln A − Ea/(RT). Plot ln k vs 1/T → slope = −Ea/R.');
-c('u3-arrhenius', 3, 'Two-point Arrhenius', 'ln(k₂/k₁) = −(Ea/R)·(1/T₂ − 1/T₁).');
+c('u3-arrhenius', 1, 'Arrhenius equation', 'k = A·exp(−E_a/RT).');
+c('u3-arrhenius', 2, 'Linear form of Arrhenius', 'ln k = ln A − E_a/(RT). Plot ln k vs 1/T → slope = −E_a/R.');
+c('u3-arrhenius', 3, 'Two-point Arrhenius', 'ln(k₂/k₁) = −(E_a/R)·(1/T₂ − 1/T₁).');
 c('u3-arrhenius', 4, 'Effect of increasing T on k', 'k increases (exponential dependence).');
-c('u3-arrhenius', 5, 'Effect of decreasing Ea on k', 'k increases (lower barrier → more successful collisions).');
+c('u3-arrhenius', 5, 'Effect of decreasing E_a on k', 'k increases (lower barrier → more successful collisions).');
 c('u3-arrhenius', 6, 'What is A?', 'Pre-exponential / frequency factor — related to collision frequency and orientation.');
 
-c('u3-K-expr', 1, 'K expression for aA + bB ⇌ cC + dD', 'Kc = [C]^c·[D]^d / ([A]^a·[B]^b).');
+c('u3-K-expr', 1, 'K expression for aA + bB ⇌ cC + dD', 'K_c = [C]^c·[D]^d / ([A]^a·[B]^b).');
 c('u3-K-expr', 2, 'Exclusions from K expression', 'Pure solids and pure liquids (their "activity" is 1).');
-c('u3-K-expr', 3, 'Kp vs Kc', 'Kp = Kc·(RT)^Δn where Δn = (mol gas products) − (mol gas reactants), R = 0.0821 L·atm/(mol·K).');
+c('u3-K-expr', 3, 'K_p vs K_c', 'K_p = K_c·(RT)^Δn where Δn = (mol gas products) − (mol gas reactants), R = 0.0821 L·atm/(mol·K).');
 c('u3-K-expr', 4, 'K depends on what?', 'Temperature only.');
 c('u3-K-expr', 5, 'K for reverse reaction', '1/K (reciprocal).');
 c('u3-K-expr', 6, 'K when reaction is multiplied by n', 'K^n.');
@@ -270,23 +270,23 @@ c('u4-conjugate-pairs', 1, 'Conjugate base of HCN', 'CN⁻.');
 c('u4-conjugate-pairs', 2, 'Conjugate acid of NH₃', 'NH₄⁺.');
 c('u4-conjugate-pairs', 3, 'Conjugate base of H₂PO₄⁻', 'HPO₄²⁻ (lose one H⁺).');
 c('u4-conjugate-pairs', 4, 'Conjugate acid of H₂PO₄⁻', 'H₃PO₄ (gain one H⁺) — amphoteric species.');
-c('u4-conjugate-pairs', 5, 'Relation between Ka of acid and Kb of its conjugate base', 'Ka · Kb = Kw = 1.0×10⁻¹⁴ at 25 °C.');
-c('u4-conjugate-pairs', 6, 'pKa + pKb = ?', '14 (at 25 °C) for a conjugate pair.');
+c('u4-conjugate-pairs', 5, 'Relation between K_a of acid and K_b of its conjugate base', 'K_a · K_b = K_w = 1.0×10⁻¹⁴ at 25 °C.');
+c('u4-conjugate-pairs', 6, 'pK_a + pK_b = ?', '14 (at 25 °C) for a conjugate pair.');
 c('u4-conjugate-pairs', 7, 'Stronger acid → conjugate base is…', 'Weaker.');
 c('u4-conjugate-pairs', 8, 'Brønsted-Lowry acid definition', 'Proton (H⁺) donor.');
 
 c('u4-pH-pOH-Kw', 1, 'Definition of pH', 'pH = −log₁₀[H₃O⁺].');
 c('u4-pH-pOH-Kw', 2, 'Definition of pOH', 'pOH = −log₁₀[OH⁻].');
 c('u4-pH-pOH-Kw', 3, 'pH + pOH = ?', '14 (at 25 °C).');
-c('u4-pH-pOH-Kw', 4, 'Kw expression', 'Kw = [H₃O⁺][OH⁻] = 1.0×10⁻¹⁴ at 25 °C.');
+c('u4-pH-pOH-Kw', 4, 'K_w expression', 'K_w = [H₃O⁺][OH⁻] = 1.0×10⁻¹⁴ at 25 °C.');
 c('u4-pH-pOH-Kw', 5, '[H₃O⁺] if pH = 4.50', '10⁻⁴·⁵⁰ ≈ 3.16×10⁻⁵ M.');
 c('u4-pH-pOH-Kw', 6, '[OH⁻] if pH = 11.20', 'pOH = 2.80 → [OH⁻] = 10⁻²·⁸⁰ ≈ 1.58×10⁻³ M.');
 c('u4-pH-pOH-Kw', 7, 'pH of neutral water at 25 °C', '7.00.');
 c('u4-pH-pOH-Kw', 8, 'pH if [H₃O⁺] = 2.0×10⁻³ M', 'pH = −log(2.0×10⁻³) = 2.70.');
 
-c('u4-acid-strength-rank', 1, 'Larger Ka means…', 'Stronger acid.');
-c('u4-acid-strength-rank', 2, 'Smaller pKa means…', 'Stronger acid (pKa = −log Ka).');
-c('u4-acid-strength-rank', 3, 'Rank: HF (Ka 7.2e−4), HCN (4.9e−10), CH₃COOH (1.8e−5). Strongest?', 'HF > CH₃COOH > HCN.');
+c('u4-acid-strength-rank', 1, 'Larger K_a means…', 'Stronger acid.');
+c('u4-acid-strength-rank', 2, 'Smaller pK_a means…', 'Stronger acid (pK_a = −log K_a).');
+c('u4-acid-strength-rank', 3, 'Rank: HF (K_a 7.2e−4), HCN (4.9e−10), CH₃COOH (1.8e−5). Strongest?', 'HF > CH₃COOH > HCN.');
 c('u4-acid-strength-rank', 4, 'Binary acid trend down a group (HF, HCl, HBr, HI)', 'Acidity INCREASES down (bond gets weaker; H-I weakest, strongest acid).');
 c('u4-acid-strength-rank', 5, 'Binary acid trend across a period (NH₃, H₂O, HF)', 'Acidity INCREASES with electronegativity of the atom bound to H (HF strongest).');
 c('u4-acid-strength-rank', 6, 'Oxoacid trend: HClO < HClO₂ < HClO₃ < HClO₄', 'More oxygens on the central atom → stronger acid (better resonance stabilization of conjugate base).');
@@ -300,50 +300,50 @@ c('u4-strong-pH', 5, 'pH of 0.010 M Ba(OH)₂', '[OH⁻] = 0.020 M (2 OH per for
 c('u4-strong-pH', 6, 'When can you NOT ignore water for strong acid pH?', 'When C_acid ≲ 10⁻⁶ M (acid contribution comparable to water).');
 c('u4-strong-pH', 7, 'pH of 1.0×10⁻⁸ M HCl', 'Cannot ignore water; must solve [H₃O⁺]² − 10⁻⁸·[H₃O⁺] − 10⁻¹⁴ = 0. Result ≈ pH 6.96 (slightly acidic of 7).');
 
-c('u4-weak-pH', 1, 'Setup for weak acid HA, initial C', 'ICE: I = C, 0, 0; C = −x, +x, +x; E = C−x, x, x. Ka = x²/(C−x).');
-c('u4-weak-pH', 2, 'When can you approximate (C − x) ≈ C?', 'When x ≤ 5% of C, equivalently when Ka·C >> x² fails... typically C/Ka > 400.');
-c('u4-weak-pH', 3, 'pH of 0.10 M acetic acid, Ka = 1.8×10⁻⁵', 'x² = (1.8×10⁻⁵)(0.10) → x = 1.34×10⁻³; pH = −log(1.34×10⁻³) ≈ 2.87.');
+c('u4-weak-pH', 1, 'Setup for weak acid HA, initial C', 'ICE: I = C, 0, 0; C = −x, +x, +x; E = C−x, x, x. K_a = x²/(C−x).');
+c('u4-weak-pH', 2, 'When can you approximate (C − x) ≈ C?', 'When x ≤ 5% of C, equivalently when K_a·C >> x² fails... typically C/K_a > 400.');
+c('u4-weak-pH', 3, 'pH of 0.10 M acetic acid, K_a = 1.8×10⁻⁵', 'x² = (1.8×10⁻⁵)(0.10) → x = 1.34×10⁻³; pH = −log(1.34×10⁻³) ≈ 2.87.');
 c('u4-weak-pH', 4, '% ionization formula', '% ionization = (x / C_initial) × 100%, where x = [H₃O⁺] from the weak acid.');
-c('u4-weak-pH', 5, 'For a weak base B, Kb expression?', 'Kb = [BH⁺][OH⁻] / [B] = x²/(C−x).');
-c('u4-weak-pH', 6, 'pH of 0.20 M NH₃, Kb = 1.8×10⁻⁵', 'x² = (1.8e−5)(0.20) → x = 1.9×10⁻³; pOH = 2.72; pH = 11.28.');
+c('u4-weak-pH', 5, 'For a weak base B, K_b expression?', 'K_b = [BH⁺][OH⁻] / [B] = x²/(C−x).');
+c('u4-weak-pH', 6, 'pH of 0.20 M NH₃, K_b = 1.8×10⁻⁵', 'x² = (1.8e−5)(0.20) → x = 1.9×10⁻³; pOH = 2.72; pH = 11.28.');
 c('u4-weak-pH', 7, 'Higher initial concentration of a weak acid: % ionization?', 'DECREASES (Le Chatelier on the dissociation equilibrium).');
-c('u4-weak-pH', 8, 'Why does pH not change linearly with concentration for weak acids?', '[H₃O⁺] ∝ √(Ka·C), so doubling C only multiplies [H₃O⁺] by √2.');
+c('u4-weak-pH', 8, 'Why does pH not change linearly with concentration for weak acids?', '[H₃O⁺] ∝ √(K_a·C), so doubling C only multiplies [H₃O⁺] by √2.');
 
-c('u4-Ka-Kb-from-pH', 1, 'Find Ka from pH 3.40 of 0.10 M HA', 'x = 10⁻³·⁴⁰ = 4.0×10⁻⁴; Ka ≈ x²/(C−x) ≈ (4.0×10⁻⁴)²/0.10 = 1.6×10⁻⁶.');
-c('u4-Ka-Kb-from-pH', 2, 'Find Ka from 2.0% ionization of 0.10 M HA', 'x = 0.020·0.10 = 2.0×10⁻³; Ka = (2.0×10⁻³)²/(0.098) ≈ 4.1×10⁻⁵.');
-c('u4-Ka-Kb-from-pH', 3, 'Find Kb from pH 10.50 of 0.050 M weak base B', 'pOH = 3.50; [OH⁻] = x = 3.16×10⁻⁴; Kb = x²/(C−x) ≈ (3.16×10⁻⁴)²/0.050 ≈ 2.0×10⁻⁶.');
-c('u4-Ka-Kb-from-pH', 4, 'If 5% rule fails (x > 5% of C), what to do?', 'Solve the quadratic Ka·(C−x) = x² without approximation.');
-c('u4-Ka-Kb-from-pH', 5, 'Why use x² ≈ Ka·C only as a shortcut?', 'It avoids the quadratic but is only valid when x << C.');
+c('u4-Ka-Kb-from-pH', 1, 'Find K_a from pH 3.40 of 0.10 M HA', 'x = 10⁻³·⁴⁰ = 4.0×10⁻⁴; K_a ≈ x²/(C−x) ≈ (4.0×10⁻⁴)²/0.10 = 1.6×10⁻⁶.');
+c('u4-Ka-Kb-from-pH', 2, 'Find K_a from 2.0% ionization of 0.10 M HA', 'x = 0.020·0.10 = 2.0×10⁻³; K_a = (2.0×10⁻³)²/(0.098) ≈ 4.1×10⁻⁵.');
+c('u4-Ka-Kb-from-pH', 3, 'Find K_b from pH 10.50 of 0.050 M weak base B', 'pOH = 3.50; [OH⁻] = x = 3.16×10⁻⁴; K_b = x²/(C−x) ≈ (3.16×10⁻⁴)²/0.050 ≈ 2.0×10⁻⁶.');
+c('u4-Ka-Kb-from-pH', 4, 'If 5% rule fails (x > 5% of C), what to do?', 'Solve the quadratic K_a·(C−x) = x² without approximation.');
+c('u4-Ka-Kb-from-pH', 5, 'Why use x² ≈ K_a·C only as a shortcut?', 'It avoids the quadratic but is only valid when x << C.');
 
 c('u4-salt-pH', 1, 'NaCl in water: acidic, basic, or neutral?', 'Neutral (Na⁺ from strong base, Cl⁻ from strong acid).');
 c('u4-salt-pH', 2, 'NH₄Cl in water: acidic, basic, or neutral?', 'Acidic (NH₄⁺ is conjugate acid of weak base; Cl⁻ inert).');
 c('u4-salt-pH', 3, 'NaF in water: acidic, basic, or neutral?', 'Basic (F⁻ is conjugate base of weak acid HF; Na⁺ inert).');
-c('u4-salt-pH', 4, 'NH₄F in water: acidic, basic, or neutral?', 'Compare Ka(NH₄⁺) ≈ 5.6×10⁻¹⁰ vs Kb(F⁻) ≈ 1.4×10⁻¹¹; Ka > Kb so SLIGHTLY ACIDIC.');
+c('u4-salt-pH', 4, 'NH₄F in water: acidic, basic, or neutral?', 'Compare K_a(NH₄⁺) ≈ 5.6×10⁻¹⁰ vs K_b(F⁻) ≈ 1.4×10⁻¹¹; K_a > K_b so SLIGHTLY ACIDIC.');
 c('u4-salt-pH', 5, 'Anion of a strong acid (Cl⁻, NO₃⁻, ClO₄⁻) in water:', 'Neutral (negligible base strength).');
 c('u4-salt-pH', 6, 'Cation of group 1 or heavy group 2 metal in water:', 'Neutral (spectator).');
 c('u4-salt-pH', 7, 'Al³⁺(aq), Fe³⁺(aq) in water:', 'Acidic — small, highly charged metals polarize bound water and release H⁺.');
-c('u4-salt-pH', 8, 'CH₃COONa pH: strategy?', 'Treat as Kb for CH₃COO⁻ where Kb = Kw/Ka(CH₃COOH).');
+c('u4-salt-pH', 8, 'CH₃COONa pH: strategy?', 'Treat as K_b for CH₃COO⁻ where K_b = K_w/K_a(CH₃COOH).');
 
-c('u4-bronsted-K', 1, 'K formula for HA + B⁻ ⇌ A⁻ + HB', 'K = Ka(HA) / Ka(HB).');
-c('u4-bronsted-K', 2, 'Direction of Brønsted reaction at equilibrium', 'Favors side with WEAKER acid (smaller Ka).');
-c('u4-bronsted-K', 3, 'HF (Ka 7.2e−4) + CN⁻ ⇌ F⁻ + HCN (Ka 4.9e−10): which side favored?', 'Right; HCN is far weaker acid than HF. K ≈ 7.2e−4 / 4.9e−10 ≈ 1.5×10⁶.');
+c('u4-bronsted-K', 1, 'K formula for HA + B⁻ ⇌ A⁻ + HB', 'K = K_a(HA) / K_a(HB).');
+c('u4-bronsted-K', 2, 'Direction of Brønsted reaction at equilibrium', 'Favors side with WEAKER acid (smaller K_a).');
+c('u4-bronsted-K', 3, 'HF (K_a 7.2e−4) + CN⁻ ⇌ F⁻ + HCN (K_a 4.9e−10): which side favored?', 'Right; HCN is far weaker acid than HF. K ≈ 7.2e−4 / 4.9e−10 ≈ 1.5×10⁶.');
 c('u4-bronsted-K', 4, 'CH₃COOH + Cl⁻ ⇌ CH₃COO⁻ + HCl: direction?', 'Left (HCl is the stronger acid; the equilibrium lies to the left, K << 1).');
-c('u4-bronsted-K', 5, 'Strategy when only Kb is given for the base', 'Convert Kb of B⁻ to Ka(HB) via Ka·Kb = Kw, then use K = Ka(HA)/Ka(HB).');
+c('u4-bronsted-K', 5, 'Strategy when only K_b is given for the base', 'Convert K_b of B⁻ to K_a(HB) via K_a·K_b = K_w, then use K = K_a(HA)/K_a(HB).');
 
 c('u4-buffer-composition', 1, 'Two ways to make a buffer', '(1) Weak acid + its conjugate base salt. (2) Weak base + its conjugate acid salt.');
 c('u4-buffer-composition', 2, 'Can you mix strong acid + strong base to make a buffer?', 'No — they react completely; no equilibrium left to resist pH change.');
-c('u4-buffer-composition', 3, 'Half-neutralization point of weak acid + strong base titration', 'pH = pKa (equal moles of HA and A⁻ → log term = 0).');
-c('u4-buffer-composition', 4, 'Approx. usable buffer range', 'pKa ± 1 (i.e., [A⁻]/[HA] between 0.1 and 10).');
+c('u4-buffer-composition', 3, 'Half-neutralization point of weak acid + strong base titration', 'pH = pK_a (equal moles of HA and A⁻ → log term = 0).');
+c('u4-buffer-composition', 4, 'Approx. usable buffer range', 'pK_a ± 1 (i.e., [A⁻]/[HA] between 0.1 and 10).');
 c('u4-buffer-composition', 5, 'Is HCl + NaCl a buffer?', 'No — HCl is strong, so the "conjugate pair" doesn\'t maintain equilibrium.');
 c('u4-buffer-composition', 6, 'How to make NH₃/NH₄⁺ buffer?', 'Mix NH₃(aq) with NH₄Cl(s) in comparable amounts.');
 
-c('u4-henderson', 1, 'Henderson-Hasselbalch equation', 'pH = pKa + log([A⁻]/[HA]).');
-c('u4-henderson', 2, 'Sister form for weak base buffer', 'pOH = pKb + log([BH⁺]/[B]).');
-c('u4-henderson', 3, 'pH of buffer: 0.10 M acetic acid + 0.10 M acetate, pKa = 4.74', 'pH = 4.74 + log(1) = 4.74.');
-c('u4-henderson', 4, 'pH of 0.20 M HF + 0.10 M F⁻, pKa(HF) = 3.14', 'pH = 3.14 + log(0.10/0.20) = 3.14 − 0.30 = 2.84.');
-c('u4-henderson', 5, 'pH of 0.05 M NH₃ + 0.10 M NH₄⁺, pKa(NH₄⁺) = 9.25', 'pH = 9.25 + log(0.05/0.10) = 9.25 − 0.30 = 8.95.');
+c('u4-henderson', 1, 'Henderson-Hasselbalch equation', 'pH = pK_a + log([A⁻]/[HA]).');
+c('u4-henderson', 2, 'Sister form for weak base buffer', 'pOH = pK_b + log([BH⁺]/[B]).');
+c('u4-henderson', 3, 'pH of buffer: 0.10 M acetic acid + 0.10 M acetate, pK_a = 4.74', 'pH = 4.74 + log(1) = 4.74.');
+c('u4-henderson', 4, 'pH of 0.20 M HF + 0.10 M F⁻, pK_a(HF) = 3.14', 'pH = 3.14 + log(0.10/0.20) = 3.14 − 0.30 = 2.84.');
+c('u4-henderson', 5, 'pH of 0.05 M NH₃ + 0.10 M NH₄⁺, pK_a(NH₄⁺) = 9.25', 'pH = 9.25 + log(0.05/0.10) = 9.25 − 0.30 = 8.95.');
 c('u4-henderson', 6, 'When can you use moles directly instead of concentrations?', 'Always — both terms in the ratio share the same total volume, which cancels.');
-c('u4-henderson', 7, 'If [A⁻] = 10·[HA], pH = ?', 'pH = pKa + log(10) = pKa + 1.');
+c('u4-henderson', 7, 'If [A⁻] = 10·[HA], pH = ?', 'pH = pK_a + log(10) = pK_a + 1.');
 
 c('u4-buffer-after-addition', 1, 'Adding strong acid to a buffer: which species decreases?', 'A⁻ (conjugate base) is consumed: A⁻ + H⁺ → HA. Moles of HA increase by same amount.');
 c('u4-buffer-after-addition', 2, 'Adding strong base to a buffer: which species decreases?', 'HA (weak acid) is consumed: HA + OH⁻ → A⁻ + H₂O. Moles of A⁻ increase.');
@@ -352,12 +352,12 @@ c('u4-buffer-after-addition', 4, 'Buffer: 0.10 mol HA + 0.10 mol A⁻; add 0.02 
 c('u4-buffer-after-addition', 5, 'Buffer: 0.10 mol HA + 0.10 mol A⁻; add 0.02 mol strong base. New ratio?', 'HA → 0.08, A⁻ → 0.12; ratio = 1.5; log = +0.176.');
 c('u4-buffer-after-addition', 6, 'If strong base added exceeds moles of HA, what happens?', 'Buffer is destroyed; excess OH⁻ governs the pH (strong base calculation).');
 
-c('u4-buffer-capacity', 1, 'Buffer capacity definition (qualitative)', 'The amount of strong acid or base a buffer can absorb while keeping pH within ±1 of pKa.');
+c('u4-buffer-capacity', 1, 'Buffer capacity definition (qualitative)', 'The amount of strong acid or base a buffer can absorb while keeping pH within ±1 of pK_a.');
 c('u4-buffer-capacity', 2, 'Capacity scales with what?', 'Absolute amounts (moles) of HA and A⁻ — more total buffer = more capacity. Ratio close to 1 maximizes capacity.');
-c('u4-buffer-capacity', 3, 'Best conjugate pair for pH 7.4 blood buffer?', 'H₂PO₄⁻ / HPO₄²⁻ (pKa₂ ≈ 7.20).');
-c('u4-buffer-capacity', 4, 'Best pair for pH 5.0?', 'Acetic acid / acetate (pKa 4.74).');
-c('u4-buffer-capacity', 5, 'Best pair for pH 9.0?', 'NH₃ / NH₄⁺ (pKa 9.25) or HCO₃⁻ / CO₃²⁻ (pKa ≈ 10.33 — also OK but further off).');
-c('u4-buffer-capacity', 6, 'Why pKa ± 1 for valid buffer?', 'Outside this range, one component is < 10% of the other and the buffer can\'t resist both acid and base addition.');
+c('u4-buffer-capacity', 3, 'Best conjugate pair for pH 7.4 blood buffer?', 'H₂PO₄⁻ / HPO₄²⁻ (pK_a₂ ≈ 7.20).');
+c('u4-buffer-capacity', 4, 'Best pair for pH 5.0?', 'Acetic acid / acetate (pK_a 4.74).');
+c('u4-buffer-capacity', 5, 'Best pair for pH 9.0?', 'NH₃ / NH₄⁺ (pK_a 9.25) or HCO₃⁻ / CO₃²⁻ (pK_a ≈ 10.33 — also OK but further off).');
+c('u4-buffer-capacity', 6, 'Why pK_a ± 1 for valid buffer?', 'Outside this range, one component is < 10% of the other and the buffer can\'t resist both acid and base addition.');
 
 export const FLASHCARDS: Flashcard[] = cards;
 
@@ -524,13 +524,13 @@ short('u3-half-life', 2, 'For a reaction with t½ that doubles each successive h
   '2',
   '2nd order: t½ = 1/(k[A]₀). As [A]₀ decreases, t½ grows.');
 
-mcq('u3-coord-diagram', 1, 'A reaction has Ea_fwd = 80 kJ/mol and ΔH = −30 kJ/mol. Ea_rev?',
+mcq('u3-coord-diagram', 1, 'A reaction has E_{a,fwd} = 80 kJ/mol and ΔH = −30 kJ/mol. E_{a,rev}?',
   ['50 kJ/mol', '110 kJ/mol', '−110 kJ/mol', '30 kJ/mol'],
   '110 kJ/mol',
-  'Ea_rev = Ea_fwd − ΔH = 80 − (−30) = 110 kJ/mol.');
+  'E_{a,rev} = E_{a,fwd} − ΔH = 80 − (−30) = 110 kJ/mol.');
 short('u3-coord-diagram', 2, 'Does a catalyst change ΔH? (yes/no)',
   'no',
-  'Catalyst lowers BOTH Ea_fwd and Ea_rev by the same amount, leaving ΔH = product − reactant unchanged.');
+  'Catalyst lowers BOTH E_{a,fwd} and E_{a,rev} by the same amount, leaving ΔH = product − reactant unchanged.');
 
 mcq('u3-mechanisms', 1, 'In a mechanism, a species that is produced in one step and consumed in a later step is a(n):',
   ['Catalyst', 'Reactant', 'Intermediate', 'Transition state'],
@@ -540,19 +540,19 @@ short('u3-mechanisms', 2, 'If the slow step is bimolecular A + B → AB, what is
   'r = k[A][B]',
   'For elementary steps, the rate law follows molecularity directly.');
 
-mcq('u3-arrhenius', 1, 'If T increases from 300 K to 310 K for a reaction with Ea = 50 kJ/mol, k changes by approximately:',
+mcq('u3-arrhenius', 1, 'If T increases from 300 K to 310 K for a reaction with E_a = 50 kJ/mol, k changes by approximately:',
   ['× 1.0 (no change)', '× 1.9', '× 0.5', '× 10'],
   '× 1.9',
   'ln(k₂/k₁) = −(50000/8.314)(1/310 − 1/300) ≈ 0.647 → k₂/k₁ ≈ 1.9. Rule of thumb: ~2× per 10 K.');
 short('u3-arrhenius', 2, 'In ln k vs 1/T plot, slope = ?',
-  '-Ea/R',
-  'From ln k = ln A − Ea/(RT), slope is −Ea/R.');
+  '-E_a/R',
+  'From ln k = ln A − E_a/(RT), slope is −E_a/R.');
 
-mcq('u3-K-expr', 1, 'For 2 NO(g) + O₂(g) ⇌ 2 NO₂(g), Kc =',
+mcq('u3-K-expr', 1, 'For 2 NO(g) + O₂(g) ⇌ 2 NO₂(g), K_c =',
   ['[NO₂]²/([NO]²[O₂])', '[NO][O₂]/[NO₂]', '[NO₂]/([NO][O₂])', '[NO]²[O₂]/[NO₂]²'],
   '[NO₂]²/([NO]²[O₂])',
   'Products over reactants, each raised to its stoichiometric coefficient.');
-short('u3-K-expr', 2, 'If Kc = 4.0 for A ⇌ B, what is Kc for 2A ⇌ 2B?',
+short('u3-K-expr', 2, 'If K_c = 4.0 for A ⇌ B, what is K_c for 2A ⇌ 2B?',
   '16',
   'When multiplied by n, K becomes K^n = 4.0² = 16.');
 
@@ -597,10 +597,10 @@ mcq('u4-conjugate-pairs', 1, 'The conjugate acid of H₂PO₄⁻ is:',
   ['HPO₄²⁻', 'PO₄³⁻', 'H₃PO₄', 'H₃O⁺'],
   'H₃PO₄',
   'Conjugate acid = parent + H⁺. H₂PO₄⁻ + H⁺ → H₃PO₄.');
-mcq('u4-conjugate-pairs', 2, 'For HClO₂ (Ka = 1.1×10⁻²), Kb of ClO₂⁻ at 25 °C is:',
+mcq('u4-conjugate-pairs', 2, 'For HClO₂ (K_a = 1.1×10⁻²), K_b of ClO₂⁻ at 25 °C is:',
   ['1.1×10⁻²', '9.1×10⁻¹³', '1.0×10⁻¹⁴', '1.1×10⁻¹²'],
   '9.1×10⁻¹³',
-  'Kb = Kw/Ka = 1.0×10⁻¹⁴ / 1.1×10⁻² = 9.1×10⁻¹³.');
+  'K_b = K_w/K_a = 1.0×10⁻¹⁴ / 1.1×10⁻² = 9.1×10⁻¹³.');
 short('u4-conjugate-pairs', 3, 'The conjugate base of HSO₄⁻ is:',
   'SO4^2-',
   'Lose one H⁺: HSO₄⁻ → SO₄²⁻.');
@@ -614,12 +614,12 @@ short('u4-pH-pOH-Kw', 2, 'What is [H₃O⁺] in a solution with pH = 8.30?',
   '[H₃O⁺] = 10⁻⁸·³⁰ ≈ 5.0×10⁻⁹ M.');
 short('u4-pH-pOH-Kw', 3, 'pH of pure water at 25 °C?',
   '7',
-  '[H₃O⁺] = [OH⁻] = √Kw = 10⁻⁷; pH = 7.00.');
+  '[H₃O⁺] = [OH⁻] = √K_w = 10⁻⁷; pH = 7.00.');
 
 mcq('u4-acid-strength-rank', 1, 'Which is the strongest acid?',
-  ['HF (Ka 7.2×10⁻⁴)', 'HCN (Ka 4.9×10⁻¹⁰)', 'CH₃COOH (Ka 1.8×10⁻⁵)', 'HNO₂ (Ka 4.5×10⁻⁴)'],
-  'HF (Ka 7.2×10⁻⁴)',
-  'Largest Ka = strongest acid.');
+  ['HF (K_a 7.2×10⁻⁴)', 'HCN (K_a 4.9×10⁻¹⁰)', 'CH₃COOH (K_a 1.8×10⁻⁵)', 'HNO₂ (K_a 4.5×10⁻⁴)'],
+  'HF (K_a 7.2×10⁻⁴)',
+  'Largest K_a = strongest acid.');
 mcq('u4-acid-strength-rank', 2, 'Rank acid strength: HClO, HClO₂, HClO₃, HClO₄.',
   ['HClO < HClO₂ < HClO₃ < HClO₄', 'HClO₄ < HClO₃ < HClO₂ < HClO', 'All equal', 'HClO > HClO₂ > HClO₃ > HClO₄'],
   'HClO < HClO₂ < HClO₃ < HClO₄',
@@ -640,11 +640,11 @@ short('u4-strong-pH', 3, 'pH of 0.020 M NaOH?',
   '12.30',
   '[OH⁻] = 0.020; pOH = 1.70; pH = 12.30.');
 
-mcq('u4-weak-pH', 1, 'pH of 0.10 M HF (Ka = 7.2×10⁻⁴)?',
+mcq('u4-weak-pH', 1, 'pH of 0.10 M HF (K_a = 7.2×10⁻⁴)?',
   ['2.07', '1.07', '3.14', '6.93'],
   '2.07',
   'x² = (7.2×10⁻⁴)(0.10) → x = 8.49×10⁻³; pH = −log(8.49×10⁻³) ≈ 2.07.');
-mcq('u4-weak-pH', 2, 'pH of 0.25 M NH₃ (Kb = 1.8×10⁻⁵)?',
+mcq('u4-weak-pH', 2, 'pH of 0.25 M NH₃ (K_b = 1.8×10⁻⁵)?',
   ['11.33', '2.67', '5.27', '8.73'],
   '11.33',
   'x² = (1.8×10⁻⁵)(0.25) → x = 2.12×10⁻³; pOH = 2.67; pH = 11.33.');
@@ -652,13 +652,13 @@ short('u4-weak-pH', 3, 'For a weak acid HA, increasing initial concentration cau
   'decrease',
   '% ionization decreases as C increases (Le Chatelier on dissociation).');
 
-mcq('u4-Ka-Kb-from-pH', 1, '0.100 M HA solution has pH 2.85. Ka?',
+mcq('u4-Ka-Kb-from-pH', 1, '0.100 M HA solution has pH 2.85. K_a?',
   ['2.0×10⁻⁵', '7.1×10⁻⁵', '5.0×10⁻³', '1.4×10⁻³'],
   '2.0×10⁻⁵',
-  'x = 10⁻²·⁸⁵ = 1.41×10⁻³; Ka ≈ x²/(0.100 − x) ≈ (1.41×10⁻³)²/0.0986 ≈ 2.0×10⁻⁵.');
-short('u4-Ka-Kb-from-pH', 2, '0.20 M weak acid is 1.5% ionized. Ka?',
+  'x = 10⁻²·⁸⁵ = 1.41×10⁻³; K_a ≈ x²/(0.100 − x) ≈ (1.41×10⁻³)²/0.0986 ≈ 2.0×10⁻⁵.');
+short('u4-Ka-Kb-from-pH', 2, '0.20 M weak acid is 1.5% ionized. K_a?',
   '4.6e-5',
-  'x = 0.015·0.20 = 3.0×10⁻³; Ka = (3.0×10⁻³)²/(0.20 − 3.0×10⁻³) ≈ 4.6×10⁻⁵.');
+  'x = 0.015·0.20 = 3.0×10⁻³; K_a = (3.0×10⁻³)²/(0.20 − 3.0×10⁻³) ≈ 4.6×10⁻⁵.');
 
 mcq('u4-salt-pH', 1, 'Which salt produces a basic solution?',
   ['NH₄NO₃', 'NaCl', 'KF', 'AlCl₃'],
@@ -667,48 +667,48 @@ mcq('u4-salt-pH', 1, 'Which salt produces a basic solution?',
 mcq('u4-salt-pH', 2, 'NH₄ClO₄ in water is:',
   ['Basic', 'Acidic', 'Neutral', 'Cannot determine'],
   'Acidic',
-  'NH₄⁺ is conjugate acid of weak base (Ka > 0); ClO₄⁻ inert (strong acid). Net acidic.');
+  'NH₄⁺ is conjugate acid of weak base (K_a > 0); ClO₄⁻ inert (strong acid). Net acidic.');
 short('u4-salt-pH', 3, 'NaNO₃ in water is acidic, basic, or neutral?',
   'neutral',
   'Na⁺ inert; NO₃⁻ inert (conjugate base of strong acid HNO₃).');
 
-mcq('u4-bronsted-K', 1, 'K for HF + CN⁻ ⇌ F⁻ + HCN, given Ka(HF) = 7.2×10⁻⁴, Ka(HCN) = 4.9×10⁻¹⁰?',
+mcq('u4-bronsted-K', 1, 'K for HF + CN⁻ ⇌ F⁻ + HCN, given K_a(HF) = 7.2×10⁻⁴, K_a(HCN) = 4.9×10⁻¹⁰?',
   ['1.5×10⁶', '3.5×10⁻¹³', '6.8×10⁻⁷', '1.5×10⁻⁶'],
   '1.5×10⁶',
-  'K = Ka(HF)/Ka(HCN) = (7.2×10⁻⁴)/(4.9×10⁻¹⁰) ≈ 1.5×10⁶. Right-favored (HCN is the weaker acid).');
+  'K = K_a(HF)/K_a(HCN) = (7.2×10⁻⁴)/(4.9×10⁻¹⁰) ≈ 1.5×10⁶. Right-favored (HCN is the weaker acid).');
 short('u4-bronsted-K', 2, 'For HA + B⁻ ⇌ A⁻ + HB, equilibrium favors the side with the (stronger/weaker) acid.',
   'weaker',
-  'Equilibrium favors the weaker acid side (smaller Ka).');
+  'Equilibrium favors the weaker acid side (smaller K_a).');
 
 mcq('u4-buffer-composition', 1, 'Which of these is a buffer?',
   ['HCl + NaCl', 'HF + NaF', 'NaOH + NaCl', 'HCl + NaOH (equal moles)'],
   'HF + NaF',
   'Buffer = weak acid + its conjugate base. HF/F⁻ qualifies; HCl is strong.');
 mcq('u4-buffer-composition', 2, 'A buffer is most effective when the pH equals approximately:',
-  ['7.0', 'pKa', 'pKb', '14 − pKa'],
-  'pKa',
-  'At pH = pKa, [A⁻] = [HA], maximizing capacity to absorb either acid or base.');
-short('u4-buffer-composition', 3, 'What is the approximate useful pH range of a buffer relative to pKa?',
-  'pKa ± 1',
+  ['7.0', 'pK_a', 'pK_b', '14 − pK_a'],
+  'pK_a',
+  'At pH = pK_a, [A⁻] = [HA], maximizing capacity to absorb either acid or base.');
+short('u4-buffer-composition', 3, 'What is the approximate useful pH range of a buffer relative to pK_a?',
+  'pK_a ± 1',
   'Outside this range, the [A⁻]/[HA] ratio is > 10 or < 0.1, and the buffer is too lopsided.');
 
-mcq('u4-henderson', 1, 'pH of buffer with 0.20 M HOAc (pKa 4.74) and 0.50 M OAc⁻?',
+mcq('u4-henderson', 1, 'pH of buffer with 0.20 M HOAc (pK_a 4.74) and 0.50 M OAc⁻?',
   ['4.74', '5.14', '4.34', '5.00'],
   '5.14',
   'pH = 4.74 + log(0.50/0.20) = 4.74 + 0.40 = 5.14.');
-mcq('u4-henderson', 2, 'pH of buffer 0.40 M NH₃ + 0.20 M NH₄⁺, pKa(NH₄⁺) = 9.25?',
+mcq('u4-henderson', 2, 'pH of buffer 0.40 M NH₃ + 0.20 M NH₄⁺, pK_a(NH₄⁺) = 9.25?',
   ['8.95', '9.25', '9.55', '4.75'],
   '9.55',
-  'pH = pKa + log([base]/[acid]) = 9.25 + log(0.40/0.20) = 9.25 + 0.30 = 9.55.');
-short('u4-henderson', 3, 'If pH = pKa + 1, what is [A⁻]/[HA]?',
+  'pH = pK_a + log([base]/[acid]) = 9.25 + log(0.40/0.20) = 9.25 + 0.30 = 9.55.');
+short('u4-henderson', 3, 'If pH = pK_a + 1, what is [A⁻]/[HA]?',
   '10',
   'log(10) = 1, so the ratio is 10.');
 
-mcq('u4-buffer-after-addition', 1, 'A 1.0 L buffer contains 0.10 mol HA + 0.10 mol A⁻; pKa = 5.00. Add 0.020 mol NaOH. New pH?',
+mcq('u4-buffer-after-addition', 1, 'A 1.0 L buffer contains 0.10 mol HA + 0.10 mol A⁻; pK_a = 5.00. Add 0.020 mol NaOH. New pH?',
   ['5.00', '5.18', '4.82', '5.30'],
   '5.18',
   'NaOH consumes HA: HA → 0.080, A⁻ → 0.120. pH = 5.00 + log(0.120/0.080) = 5.00 + 0.176 = 5.18.');
-mcq('u4-buffer-after-addition', 2, 'Same buffer (0.10/0.10, pKa 5.00), add 0.020 mol HCl. New pH?',
+mcq('u4-buffer-after-addition', 2, 'Same buffer (0.10/0.10, pK_a 5.00), add 0.020 mol HCl. New pH?',
   ['5.00', '4.82', '5.18', '4.00'],
   '4.82',
   'HCl consumes A⁻: A⁻ → 0.080, HA → 0.120. pH = 5.00 + log(0.080/0.120) = 5.00 − 0.176 = 4.82.');
@@ -717,16 +717,16 @@ short('u4-buffer-after-addition', 3, 'Order of operations for "add strong acid t
   'First the strong acid reacts completely with A⁻ (or strong base with HA), updating moles. Then apply H-H with the new moles.');
 
 mcq('u4-buffer-capacity', 1, 'Best conjugate pair for a buffer at pH 7.4?',
-  ['CH₃COOH/CH₃COO⁻ (pKa 4.74)', 'H₂PO₄⁻/HPO₄²⁻ (pKa 7.20)', 'NH₄⁺/NH₃ (pKa 9.25)', 'HF/F⁻ (pKa 3.14)'],
-  'H₂PO₄⁻/HPO₄²⁻ (pKa 7.20)',
-  'pKa within ±1 of 7.4. (This is the blood buffer system.)');
+  ['CH₃COOH/CH₃COO⁻ (pK_a 4.74)', 'H₂PO₄⁻/HPO₄²⁻ (pK_a 7.20)', 'NH₄⁺/NH₃ (pK_a 9.25)', 'HF/F⁻ (pK_a 3.14)'],
+  'H₂PO₄⁻/HPO₄²⁻ (pK_a 7.20)',
+  'pK_a within ±1 of 7.4. (This is the blood buffer system.)');
 mcq('u4-buffer-capacity', 2, 'Which buffer has the highest capacity?',
   ['0.01 M HA / 0.01 M A⁻', '0.1 M HA / 0.1 M A⁻', '1.0 M HA / 1.0 M A⁻', 'all equal'],
   '1.0 M HA / 1.0 M A⁻',
   'Capacity scales with absolute moles, not the ratio.');
 short('u4-buffer-capacity', 3, 'Best buffer pair near pH 5.0?',
   'acetic acid / acetate',
-  'pKa(CH₃COOH) ≈ 4.74, within ±1 of 5.0.');
+  'pK_a(CH₃COOH) ≈ 4.74, within ±1 of 5.0.');
 
 export const QUESTIONS: Question[] = questions;
 

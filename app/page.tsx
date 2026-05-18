@@ -13,6 +13,7 @@ import { loadReview } from '@/lib/storage';
 import { dueCount } from '@/lib/leitner';
 import { TopicCardLink } from '@/components/TopicCardLink';
 import { Countdown } from '@/components/Countdown';
+import { Fmt } from '@/lib/chemFmt';
 import type { ReviewState } from '@/lib/types';
 
 export default function Dashboard() {
@@ -80,7 +81,7 @@ export default function Dashboard() {
           <section key={unit.id}>
             <div className="flex items-end justify-between mb-3">
               <h2 className="text-lg font-medium text-zinc-100">
-                Unit {unit.id}: {unit.name}
+                Unit {unit.id}: <Fmt>{unit.name}</Fmt>
               </h2>
               <div className="text-xs text-zinc-500">
                 ~{Math.round(unit.examWeight * 100)}% of exam

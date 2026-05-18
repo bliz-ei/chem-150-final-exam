@@ -7,6 +7,7 @@ import { QUESTIONS, TOPICS_BY_ID } from '@/lib/seed';
 import { loadReview, saveReview } from '@/lib/storage';
 import { filterByQuery, pickWeighted } from '@/lib/weighting';
 import { QuestionCardView } from '@/components/QuestionCard';
+import { Fmt } from '@/lib/chemFmt';
 import type { Question, ReviewState, UnitId } from '@/lib/types';
 
 const Inner = () => {
@@ -100,7 +101,7 @@ const Inner = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between text-xs text-zinc-500">
-        <span>{filterLabel}</span>
+        <span><Fmt>{filterLabel ?? ''}</Fmt></span>
         <span>
           Session: <span className="font-mono text-zinc-300">{stats.correct}/{stats.total}</span>
         </span>

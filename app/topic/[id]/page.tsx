@@ -7,6 +7,7 @@ import {
   cardsByTopic,
   questionsByTopic,
 } from '@/lib/seed';
+import { Fmt } from '@/lib/chemFmt';
 
 export function generateStaticParams() {
   return TOPICS.map((t) => ({ id: t.id }));
@@ -27,8 +28,8 @@ export default function TopicPage({ params }: { params: { id: string } }) {
         <div className="text-xs text-zinc-500">
           Unit {unit.id} · {unit.name} · ~{Math.round(unit.examWeight * 100)}% of exam
         </div>
-        <h1 className="text-2xl font-semibold text-zinc-100 mt-1">{topic.name}</h1>
-        <p className="text-zinc-300 mt-2 whitespace-pre-wrap">{topic.description}</p>
+        <h1 className="text-2xl font-semibold text-zinc-100 mt-1"><Fmt>{topic.name}</Fmt></h1>
+        <p className="text-zinc-300 mt-2 whitespace-pre-wrap"><Fmt>{topic.description}</Fmt></p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Link
             href={`/cards/?topic=${topic.id}`}
@@ -64,8 +65,8 @@ export default function TopicPage({ params }: { params: { id: string } }) {
               key={c.id}
               className="rounded border border-zinc-800 bg-zinc-950 p-3 text-sm"
             >
-              <div className="text-zinc-100">{c.front}</div>
-              <div className="text-zinc-400 mt-1 text-xs whitespace-pre-wrap">{c.back}</div>
+              <div className="text-zinc-100"><Fmt>{c.front}</Fmt></div>
+              <div className="text-zinc-400 mt-1 text-xs whitespace-pre-wrap"><Fmt>{c.back}</Fmt></div>
             </li>
           ))}
         </ul>
@@ -84,7 +85,7 @@ export default function TopicPage({ params }: { params: { id: string } }) {
               <div className="text-[10px] uppercase tracking-wider text-zinc-500 mb-1">
                 {q.kind === 'mcq' ? 'Multiple choice' : 'Short answer'}
               </div>
-              <div className="text-zinc-100">{q.prompt}</div>
+              <div className="text-zinc-100"><Fmt>{q.prompt}</Fmt></div>
               {q.kind === 'mcq' && q.choices && (
                 <ul className="mt-1.5 space-y-0.5">
                   {q.choices.map((ch) => (
@@ -93,15 +94,15 @@ export default function TopicPage({ params }: { params: { id: string } }) {
                       className={`text-xs ${ch === q.answer ? 'text-emerald-300' : 'text-zinc-400'}`}
                     >
                       {ch === q.answer ? '✓ ' : '· '}
-                      {ch}
+                      <Fmt>{ch}</Fmt>
                     </li>
                   ))}
                 </ul>
               )}
               {q.kind === 'short' && (
-                <div className="text-xs text-emerald-300 mt-1">Answer: {q.answer}</div>
+                <div className="text-xs text-emerald-300 mt-1">Answer: <Fmt>{q.answer}</Fmt></div>
               )}
-              <div className="text-xs text-zinc-400 mt-1 whitespace-pre-wrap">{q.explanation}</div>
+              <div className="text-xs text-zinc-400 mt-1 whitespace-pre-wrap"><Fmt>{q.explanation}</Fmt></div>
             </li>
           ))}
         </ul>
